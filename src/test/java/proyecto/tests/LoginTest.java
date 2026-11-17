@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import proyecto.base.BaseTest;
 import proyecto.pages.InventoryPage;
@@ -21,12 +23,14 @@ class LoginTest extends BaseTest {
         assertEquals("Products", inventario.obtenerTitulo());
     }
 
-    @Test
-    @DisplayName("TC02 Usuario bloqueado no puede iniciar sesión")
-    void usuarioBloqueado() {
+    @ParameterizedTest(name = "{0} {1}")
+    @CsvFileSource(resources = "/login_cases.csv", numLinesToSkip = 1, delimiter = ';')
+    @DisplayName("Login rechazado según tabla de decisión")
+    void loginRechazado(String id, String descripcion, String usuario,
+                        String clave, String mensajeEsperado) {
         LoginPage login = new LoginPage(driver);
-        login.iniciarSesion("locked_out_user", "secret_sauce");
+        login.iniciarSesion(usuario, clave);
 
-        assertEquals("Epic sadface: Sorry, this user has been locked out.", login.obtenerError());
+        assertEquals(mensajeEsperado, login.obtenerError());
     }
 }
