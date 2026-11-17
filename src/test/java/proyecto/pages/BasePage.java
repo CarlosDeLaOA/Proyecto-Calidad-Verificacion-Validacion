@@ -3,10 +3,10 @@ package proyecto.pages;
 import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,8 +25,14 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(localizador));
     }
 
+
     protected void clic(By localizador) {
-        wait.until(ExpectedConditions.elementToBeClickable(localizador)).click();
+        wait.ignoring(StaleElementReferenceException.class, ElementClickInterceptedException.class)
+                .ignoring(ElementNotInteractableException.class)
+                .until(d -> {
+                    d.findElement(localizador).click();
+                    return true;
+                });
     }
 
     protected void escribir(By localizador, String texto) {
@@ -56,4 +62,5 @@ public abstract class BasePage {
     protected List<String> textosDe(By localizador) {
         return driver.findElements(localizador).stream().map(WebElement::getText).toList();
     }
+
 }

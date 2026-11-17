@@ -59,4 +59,8 @@ public class InventoryPage extends BasePage {
         clic(enlaceCarrito);
         return new CartPage(driver);
     }
+    // Espera a que desaparezca la insignia del carrito; true si no hay productos
+    public boolean carritoEstaVacio() {
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(insigniaCarrito));
+    }
 }
