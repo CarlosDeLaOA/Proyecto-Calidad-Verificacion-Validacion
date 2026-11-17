@@ -1,7 +1,7 @@
 id;descripcion;nombre;apellido;postal;mensajeEsperado
-CP01;Nombre vacío;"";Perez;10101;Error: First Name is required
-CP02;Apellido vacío;Carlos;"";10101;Error: Last Name is required
-CP03;Código postal vacío;Carlos;Perez;"";Error: Postal Code is required
-CP04;Los tres campos vacíos;"";"";"";Error: First Name is required
-CP05;Nombre vacío y apellido vacío;"";"";10101;Error: First Name is required
-CP06;Apellido y postal vacíos;Carlos;"";"";Error: Last Name is required
+TC26;Nombre vacío;"";Perez;10101;Error: First Name is required
+TC27;Apellido vacío;Carlos;"";10101;Error: Last Name is required
+TC28;Código postal vacío;Carlos;Perez;"";Error: Postal Code is required
+TC29;Los tres campos vacíos;"";"";"";Error: First Name is required
+TC30;Nombre vacío y apellido vacío;"";"";10101;Error: First Name is required
+TC31;Apellido y postal vacíos;Carlos;"";"";Error: Last Name is required

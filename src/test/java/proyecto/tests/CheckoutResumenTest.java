@@ -17,7 +17,7 @@ class CheckoutResumenTest extends BaseTest {
     private static final double TOLERANCIA = 0.005;
 
     @Test
-    @DisplayName("CR01 El resumen calcula subtotal, impuesto y total correctamente")
+    @DisplayName("TC36 El resumen calcula subtotal, impuesto y total correctamente")
     void resumenCalculaMontos() {
         InventoryPage inventario = new LoginPage(driver).iniciarSesionComo("standard_user");
         inventario.agregarProducto("sauce-labs-backpack");      // 29.99

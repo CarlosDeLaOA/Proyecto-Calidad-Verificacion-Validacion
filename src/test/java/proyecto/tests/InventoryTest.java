@@ -22,7 +22,7 @@ class InventoryTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC10 Ordenar productos por nombre de A a Z")
+    @DisplayName("TC13 Ordenar productos por nombre de A a Z")
     void ordenarNombreAscendente() {
         inventario.ordenarPor("az");
         List<String> nombres = inventario.obtenerNombres();
@@ -30,7 +30,7 @@ class InventoryTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC11 Ordenar productos por nombre de Z a A")
+    @DisplayName("TC14 Ordenar productos por nombre de Z a A")
     void ordenarNombreDescendente() {
         inventario.ordenarPor("za");
         List<String> nombres = inventario.obtenerNombres();
@@ -38,7 +38,7 @@ class InventoryTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC12 Ordenar productos por precio de menor a mayor")
+    @DisplayName("TC15 Ordenar productos por precio de menor a mayor")
     void ordenarPrecioAscendente() {
         inventario.ordenarPor("lohi");
         List<Double> precios = inventario.obtenerPrecios();
@@ -46,7 +46,7 @@ class InventoryTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC13 Ordenar productos por precio de mayor a menor")
+    @DisplayName("TC16 Ordenar productos por precio de mayor a menor")
     void ordenarPrecioDescendente() {
         inventario.ordenarPor("hilo");
         List<Double> precios = inventario.obtenerPrecios();

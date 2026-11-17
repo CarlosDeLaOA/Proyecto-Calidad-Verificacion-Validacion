@@ -16,7 +16,7 @@ import proyecto.pages.LoginPage;
 class CheckoutTest extends BaseTest {
 
     @Test
-    @DisplayName("TC09 Compra completa con un producto")
+    @DisplayName("TC37 Compra completa con un producto")
     void compraExitosa() {
         InventoryPage inventario = new LoginPage(driver).iniciarSesionComo("standard_user");
         inventario.agregarProducto("Sauce Labs Backpack");

@@ -22,14 +22,14 @@ class SessionTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC18 Cerrar sesión regresa a la pantalla de login")
+    @DisplayName("TC39 Cerrar sesión regresa a la pantalla de login")
     void cerrarSesion() {
         LoginPage login = menu.cerrarSesion();
         assertTrue(login.estaMostrandoLogin());
     }
 
     @Test
-    @DisplayName("TC19 Reiniciar el estado de la aplicación vacía el carrito")
+    @DisplayName("TC25 Reiniciar el estado de la aplicación vacía el carrito")
     void reiniciarEstado() {
         inventario.agregarProducto("Sauce Labs Backpack");
         menu.reiniciarEstadoAplicacion();

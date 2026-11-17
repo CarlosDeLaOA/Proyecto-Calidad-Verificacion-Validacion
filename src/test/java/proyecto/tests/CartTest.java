@@ -25,7 +25,7 @@ class CartTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC14 Agregar dos productos actualiza el contador del carrito")
+    @DisplayName("TC19 Agregar dos productos actualiza el contador del carrito")
     void contadorAlAgregar() {
         inventario.agregarProducto(MOCHILA);
         inventario.agregarProducto(LUZ);
@@ -33,7 +33,7 @@ class CartTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC15 Quitar un producto desde el inventario reduce el contador")
+    @DisplayName("TC20 Quitar un producto desde el inventario reduce el contador")
     void contadorAlQuitar() {
         inventario.agregarProducto(MOCHILA);
         inventario.agregarProducto(LUZ);
@@ -42,7 +42,7 @@ class CartTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC16 El carrito muestra los productos agregados")
+    @DisplayName("TC21 El carrito muestra los productos agregados")
     void carritoMuestraProductos() {
         inventario.agregarProducto(MOCHILA);
         inventario.agregarProducto(LUZ);
@@ -51,12 +51,21 @@ class CartTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("TC17 Quitar un producto desde el carrito lo elimina de la lista")
+    @DisplayName("TC22 Quitar un producto desde el carrito lo elimina de la lista")
     void quitarDesdeCarrito() {
         inventario.agregarProducto(MOCHILA);
         inventario.agregarProducto(LUZ);
         CartPage carrito = inventario.irAlCarrito();
         carrito.quitarProducto(MOCHILA);
         assertEquals(List.of(LUZ), carrito.obtenerNombresProductos());
+    }
+
+    @Test
+    @DisplayName("TC23 Continue Shopping regresa al catálogo sin perder los productos")
+    void seguirComprando() {
+        inventario.agregarProducto(MOCHILA);
+        CartPage carrito = inventario.irAlCarrito();
+        InventoryPage catalogo = carrito.seguirComprando();
+        assertEquals(1, catalogo.obtenerCantidadCarrito());
     }
 }
