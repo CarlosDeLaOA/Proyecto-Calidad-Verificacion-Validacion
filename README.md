@@ -45,12 +45,6 @@ Al terminar, abrir en el navegador el archivo:
 target/reporte/reporte.html
 ```
 
-## Cómo trabajar sin dañar lo de los demás
-
-1. En GitHub Desktop: Current Branch, New Branch, y ponerle tu nombre (por ejemplo `samanta-torunno`).
-2. Hacer tus cambios y probar con `mvn test`.
-3. En GitHub Desktop: escribir un mensaje corto de lo que hiciste, Commit y luego Push.
-4. Avisar al grupo para que revisen tu rama.
 
 No subir las carpetas `target` ni `.idea`.
 
@@ -58,6 +52,4 @@ No subir las carpetas `target` ni `.idea`.
 
 - Samanta Toruño Sequeira
 - Camila Morales Solano
-- Gabriel Bryan Salazar
-- Angelo Orlando Campos
 - Carlos Manuel De La O
