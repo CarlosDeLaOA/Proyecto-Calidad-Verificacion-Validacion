@@ -41,9 +41,6 @@ public abstract class BasePage {
         elemento.sendKeys(texto);
     }
 
-    protected String textoDe(By localizador) {
-        return esperarVisible(localizador).getText();
-    }
 
     protected boolean estaVisible(By localizador) {
         try {
@@ -60,7 +57,14 @@ public abstract class BasePage {
 
     // Devuelve el texto de todos los elementos que coinciden (lista vacía si no hay)
     protected List<String> textosDe(By localizador) {
-        return driver.findElements(localizador).stream().map(WebElement::getText).toList();
+        return wait.ignoring(StaleElementReferenceException.class)
+                .until(d -> d.findElements(localizador).stream()
+                        .map(WebElement::getText)
+                        .toList());
+    }
+    protected String textoDe(By localizador) {
+        return wait.ignoring(StaleElementReferenceException.class)
+                .until(d -> d.findElement(localizador).getText());
     }
 
 }
