@@ -1,6 +1,7 @@
 package proyecto.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -44,5 +45,15 @@ public abstract class BasePage {
         } catch (TimeoutException e) {
             return false;
         }
+    }
+
+    // Convierte "Sauce Labs Backpack" en "sauce-labs-backpack", como lo usa data-test
+    protected String aSlug(String texto) {
+        return texto.toLowerCase().replace(" ", "-");
+    }
+
+    // Devuelve el texto de todos los elementos que coinciden (lista vacía si no hay)
+    protected List<String> textosDe(By localizador) {
+        return driver.findElements(localizador).stream().map(WebElement::getText).toList();
     }
 }
