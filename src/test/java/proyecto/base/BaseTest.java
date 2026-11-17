@@ -12,7 +12,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(ReporteExtension.class)
 public abstract class BaseTest {
     protected WebDriver driver;
 
