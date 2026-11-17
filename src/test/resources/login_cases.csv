@@ -3,6 +3,6 @@ TC02;Usuario bloqueado con clave válida;locked_out_user;secret_sauce;Epic sadfa
 TC03;Clave incorrecta con usuario válido;standard_user;clave_mala;Epic sadface: Username and password do not match any user in this service
 TC04;Usuario inexistente con clave válida;usuario_falso;secret_sauce;Epic sadface: Username and password do not match any user in this service
 TC05;Usuario y clave inexistentes;usuario_falso;clave_mala;Epic sadface: Username and password do not match any user in this service
-TC06;Usuario vacío con clave válida;"";secret_sauce;Epic sadface: Username es requerido
+TC06;Usuario vacío con clave válida;"";secret_sauce;Epic sadface: Username is required
 TC07;Clave vacía con usuario válido;standard_user;"";Epic sadface: Password is required
 TC08;Usuario y clave vacíos;"";"";Epic sadface: Username is required
