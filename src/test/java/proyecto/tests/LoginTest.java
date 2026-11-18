@@ -8,6 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import proyecto.base.BaseTest;
+import proyecto.base.Config;
 import proyecto.pages.InventoryPage;
 import proyecto.pages.LoginPage;
 
@@ -17,7 +18,7 @@ class LoginTest extends BaseTest {
     @DisplayName("TC01 Login exitoso con usuario estándar")
     void loginExitoso() {
         LoginPage login = new LoginPage(driver);
-        login.iniciarSesion("standard_user", "secret_sauce");
+        login.iniciarSesion("standard_user", Config.get("password"));
 
         InventoryPage inventario = new InventoryPage(driver);
         assertEquals("Products", inventario.obtenerTitulo());
