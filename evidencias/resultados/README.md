@@ -9,23 +9,23 @@ Resultado: **Pasó**, **Falló** (se reporta como defecto DEF11 en adelante en `
 
 ## Resumen
 
-| Caso | Req. | Ejecutó | Resultado | Evidencia |
-|---|---|---|---|---|
-| TC09 | RF03 | Camila | Pasó | TC09.png |
-| TC10 | RF03 | Camila | Pasó | TC10.png |
-| TC11 | RF03 | Camila | Pasó | TC11.png |
-| TC12 | RF05 | Camila | Pasó | TC12.png |
-| TC17 | RF06 | Camila | Pasó | TC17.png |
-| TC18 | RF07 | Camila | Pasó | TC18.png |
-| TC24 | RF07, RF08 | Camila | Pasó | TC24.png |
-| TC46 | RF05 | Camila | Falló | TC46.png |
-| TC32 | RF09 | Carlos | Pasó | TC32.png |
-| TC33 | RF09 | Carlos | Pasó | TC33.png |
-| TC34 | RF09 | Carlos | Pasó | TC34.png |
-| TC35 | RF09 | Carlos | Pasó | TC35.png |
-| TC38 | RF10 | Carlos | Pasó | TC38.png |
-| TC40 | RF11 | Carlos | Pasó | TC40.png |
-| TC41 | RF11 | Carlos | Falló | TC41.png |
+| Caso | Req. | Resultado | Evidencia |
+|---|---|---|---|
+| TC09 | RF03 | Pasó | TC09.png |
+| TC10 | RF03 | Pasó | TC10.png |
+| TC11 | RF03 | Pasó | TC11.png |
+| TC12 | RF05 | Pasó | TC12.png |
+| TC17 | RF06 | Pasó | TC17.png |
+| TC18 | RF07 | Pasó | TC18.png |
+| TC24 | RF07, RF08 | Pasó | TC24.png |
+| TC46 | RF05 | Falló | TC46.png |
+| TC32 | RF09 | Pasó | TC32.png |
+| TC33 | RF09 | Pasó | TC33.png |
+| TC34 | RF09 | Pasó | TC34.png |
+| TC35 | RF09 | Pasó | TC35.png |
+| TC38 | RF10 | Pasó | TC38.png |
+| TC40 | RF11 | Pasó | TC40.png |
+| TC41 | RF11 | Falló | TC41.png |
 
 ## Detalle
 
