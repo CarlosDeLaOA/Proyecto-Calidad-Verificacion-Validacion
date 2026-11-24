@@ -3,6 +3,7 @@ package proyecto.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,6 +16,7 @@ public class InventoryPage extends BasePage {
     private final By selectorOrden = By.cssSelector("[data-test='product-sort-container']");
     private final By nombres = By.cssSelector("[data-test='inventory-item-name']");
     private final By precios = By.cssSelector("[data-test='inventory-item-price']");
+    private final By imagenes = By.cssSelector("img.inventory_item_img");
 
     public InventoryPage(WebDriver driver) {
         super(driver);
@@ -34,8 +36,11 @@ public class InventoryPage extends BasePage {
 
     // Si no hay insignia en el carrito, la cantidad es 0
     public int obtenerCantidadCarrito() {
-        List<WebElement> insignia = driver.findElements(insigniaCarrito);
-        return insignia.isEmpty() ? 0 : Integer.parseInt(insignia.get(0).getText());
+        wait.until(ExpectedConditions.urlContains("inventory.html"));
+        return wait.ignoring(StaleElementReferenceException.class).until(d -> {
+            List<WebElement> insignia = d.findElements(insigniaCarrito);
+            return insignia.isEmpty() ? 0 : Integer.parseInt(insignia.get(0).getText());
+        });
     }
 
     // Valores válidos: "az", "za", "lohi", "hilo"
@@ -52,6 +57,14 @@ public class InventoryPage extends BasePage {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(precios));
         return textosDe(precios).stream()
                 .map(texto -> Double.parseDouble(texto.replace("$", "")))
+                .toList();
+    }
+
+    // Devuelve la dirección (src) de la imagen de cada producto
+    public List<String> obtenerImagenes() {
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(imagenes));
+        return driver.findElements(imagenes).stream()
+                .map(imagen -> imagen.getAttribute("src"))
                 .toList();
     }
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends BasePage {
     private final By nombres = By.cssSelector("[data-test='inventory-item-name']");
+    private final By listaCarrito = By.cssSelector("[data-test='cart-list']");
     private final By botonPagar = By.cssSelector("[data-test='checkout']");
     private final By seguirComprando = By.cssSelector("[data-test='continue-shopping']");
 
@@ -17,6 +18,7 @@ public class CartPage extends BasePage {
 
     public List<String> obtenerNombresProductos() {
         wait.until(ExpectedConditions.urlContains("cart.html"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(listaCarrito));
         return textosDe(nombres);
     }
 

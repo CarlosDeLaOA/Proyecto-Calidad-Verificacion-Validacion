@@ -26,6 +26,11 @@ public class CheckoutPage extends BasePage {
         escribir(campoCodigoPostal, codigoPostal);
     }
 
+    // Devuelve lo que realmente quedó escrito en el campo de apellido
+    public String obtenerApellido() {
+        return esperarVisible(campoApellido).getAttribute("value");
+    }
+
     public void continuar() {
         clic(botonContinuar);
     }
