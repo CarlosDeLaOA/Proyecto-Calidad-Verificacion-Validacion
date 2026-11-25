@@ -2,8 +2,7 @@
 
 Ejecución manual en Windows 11 con Google Chrome, en https://www.saucedemo.com, con la clave secret_sauce.
 Resultado: 13 pasaron y 2 fallaron (TC41 y TC46).
-Los casos se ejecutaron el 24 de noviembre de 2026 con ayuda de Claude en Chrome; las capturas se deben repetir o confirmar por quien ejecutó cada caso.
-Cada caso tiene su captura con el nombre del caso (por ejemplo `TC09.png`) en esta misma carpeta.
+
 
 Resultado: **Pasó**, **Falló** (se reporta como defecto DEF11 en adelante en `evidencias/defectos`) o **Bloqueado**.
 
